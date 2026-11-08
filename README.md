@@ -1,32 +1,47 @@
-# ShiroAkari's Project — Playable Prototype Foundation
+# ShiroAkari's Project — v0.3 Web Demo
 
-This is a Unity 6 URP-ready **prototype codebase**, not a finished full open-world game.
-It includes third-person movement, follow camera, interaction, collectibles, a simple rune puzzle,
-NPC dialogue, a knowledge journal, quest tracking, and local save/load.
+This package continues the supplied Unity v0.2 project and adds a browser-playable demo in `WebDemo/`.
 
-## Setup
-1. Install Unity Hub and Unity 6 (any recent Unity 6 LTS release).
-2. Create a new **3D (URP)** project named `ShiroAkarisProject`.
-3. Close Unity, then copy this package's `Assets/` and `Packages/` folders into the project root.
-   Merge folders if prompted.
-4. Reopen the project and wait for scripts to compile.
-5. In Unity, choose **Tools > ShiroAkari > Create Prototype Scene**.
-6. Open `Assets/Scenes/WhisperingMeadow.unity` and press Play.
+## Play locally
+Because this demo uses JavaScript ES modules, open it through a local web server (not by double-clicking the HTML file).
 
-## Controls
+### Quick option (Python)
+From the `WebDemo` folder:
+```bash
+python -m http.server 8000
+```
+Then open `http://localhost:8000`.
+
+### Publish to GitHub Pages
+1. Upload/commit the entire project, including the `WebDemo` folder, to your repository.
+2. In GitHub, open **Settings → Pages**.
+3. Set the publishing source to **Deploy from a branch**.
+4. Choose your branch (usually `main`) and folder **/(root)**, then Save.
+5. Open `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/WebDemo/`.
+
+If your existing Pages site is configured to publish from `/docs` or another folder, either change it to root or move the contents of `WebDemo` to the selected publishing folder.
+
+## Browser controls
 - WASD / Arrow keys: move
-- Mouse: look around
+- Mouse: look around (click the game after entering to capture the mouse)
+- Shift: run
 - Space: jump
-- Left Shift: run
 - E: interact
-- Esc: unlock cursor
+- J: journal
+- I: satchel
+- F5 or Save button: save to this browser/device
+- Esc: release mouse / close panel
 
-The prototype scene builder creates primitive placeholder art so the scene is playable immediately.
-Replace primitives with original models, animation, sound, and designed environments during production.
+## Included gameplay
+- Third-person 3D meadow made from procedural geometry
+- Meadow Keeper dialogue and first quest objective
+- Knowledge collectible with an educational fact
+- Star Shard inventory collectible
+- Ancient rune puzzle that opens the sealed gate
+- Journal, quest progress, local save/load
 
-## Important
-- Uses Unity's built-in legacy Input Manager for maximum out-of-box compatibility. If the project is
-  configured as Input System Package only, set **Active Input Handling** to **Both** or **Input Manager**
-  in Project Settings > Player, then restart Unity.
-- This is a foundation for a vertical slice, not a claim that the complete game is finished.
-- Android support/build modules are installed through Unity Hub when preparing mobile builds.
+## Notes
+- First load requires internet access to fetch Three.js and Google Fonts from their CDNs.
+- Browser save data is stored in localStorage on the device/browser where you play.
+- This is a playable web demo, not the full open-world game. Models, animation, audio, touch controls, and additional regions are future milestones.
+- The Unity v0.2 source remains in `Assets/` and `Packages/`. The web demo is a separate browser implementation of its core gameplay loop.

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#101c27">
+  <title>ShiroAkari — Whispering Meadow</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}
+  </script>
+</head>
+<body>
+  <div id="game"></div>
+  <div id="vignette"></div>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✧</span><div><b>SHIROAKARI</b><small>THE WHISPERING MEADOW</small></div></div>
+    <div class="top-actions">
+      <button id="journalBtn" class="glass-btn">✧ <span>Journal</span> <kbd>J</kbd></button>
+      <button id="bagBtn" class="glass-btn">◇ <span>Satchel</span> <kbd>I</kbd></button>
+      <button id="saveBtn" class="glass-btn">↓ <span>Save</span></button>
+    </div>
+  </header>
+  <section class="quest-card">
+    <div class="eyebrow">CURRENT JOURNEY</div>
+    <div class="quest-title">A Meadow's Memory</div>
+    <div id="objective">Find the Meadow Keeper and learn about the ancient seal.</div>
+    <div class="quest-progress"><span id="questProgress"></span></div>
+    <small id="questStep">0 / 3 discoveries</small>
+  </section>
+  <div class="crosshair"><i></i><i></i></div>
+  <div id="prompt" class="prompt hidden"><kbd>E</kbd><span id="promptText">Interact</span></div>
+  <div class="bottom-hint"><span>W A S D</span> Move <i>·</i> <span>SHIFT</span> Run <i>·</i> <span>SPACE</span> Jump <i>·</i> <span>MOUSE</span> Look</div>
+  <div id="toast" class="toast"></div>
+  <div id="panel" class="panel hidden">
+    <div class="panel-head"><div><div class="eyebrow" id="panelEyebrow">FIELD NOTES</div><h2 id="panelTitle">Knowledge Journal</h2></div><button id="closePanel" class="close-btn">×</button></div>
+    <div id="panelBody" class="panel-body"></div>
+  </div>
+  <div id="startScreen" class="start-screen">
+    <div class="start-content">
+      <div class="sigil">✧</div>
+      <p class="eyebrow">A SMALL WORLD, FULL OF WONDERS</p>
+      <h1>Whispering<br><em>Meadow</em></h1>
+      <p class="intro">An old path is waiting to be rediscovered.<br>Take your time. The meadow has stories to tell.</p>
+      <button id="startBtn" class="primary-btn">ENTER THE MEADOW <span>→</span></button>
+      <div class="start-note">BEST EXPERIENCED WITH A KEYBOARD & MOUSE</div>
+    </div>
+  </div>
+  <div id="loading" class="loading">Preparing the meadow<span> · · ·</span></div>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

@@ -1,5 +1,1 @@
-public interface IInteractable
-{
-    string Prompt { get; }
-    void Interact();
-}
+public interface IInteractable { string Prompt { get; } void Interact(); }
